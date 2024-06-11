@@ -1,7 +1,7 @@
-import { Manrope } from 'next/font/google'
+import { Oswald } from 'next/font/google'
 import './globals.css'
 
-const manrope = Manrope({ subsets: ['latin'] })
+const oswald = Oswald({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={manrope.className}>{children}</body>
+      <body className={oswald.className}>{children}</body>
     </html>
   )
 }
