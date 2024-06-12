@@ -1,11 +1,17 @@
 // import styles from './page.module.css'
 import { Questrial } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
 import Image from 'next/image'
-// import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
+import Subtitle from './component/Subtitle';
+import Footer from './component/footer';
+import Header from './component/header';
+import SocialMedia from './component/socialMedia';
+import Form from './component/form';
+import Slider from './component/slider';
 
 const questrial = Questrial({
   subsets: ['latin'],
@@ -19,24 +25,6 @@ export default function Home() {
   return (
 
     <div className="background">
-
-      <header className='header alignMargin'>
-        <Image
-          src="/davidnathanlogo.png"
-          alt='David Nathan Logo'
-          width={128}
-          height={64}
-          className='headerIcon'
-        />
-
-        <Image
-          src="/Hambuger.png"
-          alt='Hambuger'
-          width={32}
-          height={32}
-          className='hambuger'
-        />
-      </header>
 
       <main className='main'>
         <div className='hero'>
@@ -126,33 +114,156 @@ export default function Home() {
           </div>
 
         </div>
-        <Image
-          src="/DavidNathanImg2.jpg"
-          alt='Deezer Logo'
-          width={497}
-          height={461}
-          className='DavidNathanImg2'
-        />
+
+        <div className='backgroundImg1-div'>
+        </div>
 
         <div className='music-player'>
-          <h2>Listen to my songs</h2>
 
-          <div>
-            <FontAwesomeIcon className="icon" icon={faChevronCircleRight} />
-            <FontAwesomeIcon className="icon" icon={faChevronCircleLeft} />
+          <Subtitle title="Listen to my songs" />
+
+          <Slider imgScr="/musicplayer.png" />
+
+          <h3 className={`${questrial.className} music-title`}>Holy Spirit</h3>
+
+          <button className={`${questrial.className} listen-now-btn`}>Listen now</button>
+        </div>
+        <div className='upcoming-events'>
+
+          <h4></h4>
+          <div className='blur-bg-calender d-flex' >
+
+            <Subtitle title="Upcoming events" />
+
+            <div className='event d-flex'>
+
+              <div className='date-div'>
+                <div className='date'>22</div>
+                <div className='date-in-words'>
+                  <h4 className='day'>Saturday</h4>
+                  <h4 className='month'>June 2024</h4>
+                </div>
+              </div>
+
+              <div className='location-div d-flex'>
+                <h2 className='location-header'>
+                  CLOUD OF GLORY [ABEOKUTA]
+                </h2>
+                <p className={`${questrial.className} location-address-pgh`}><b>EB Music Studio</b>, No 3, Idowu Street Abeokuta</p>
+
+                <h4 className='event-time'>
+                  3PM
+                </h4>
+              </div>
+
+              <button className='reserve-spot-btn'>RESERVE SPOT</button>
+            </div>
+
+            <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button>
+
+          </div>
+
+        </div>
+
+
+        <div className='backgroundImg2-div'>
+        </div>
+
+        <div className='about d-flex'>
+          <Subtitle title="ABOUT DAVID NATHAN ILE" />
+
+          <div className='about-inner-div d-flex'>
+
+
+            <p className={`${questrial.className} about-pgh`}>
+              David Nathan Ile is a gifted and anointed minstrel, passionately dedicated to
+              spreading the gospel and Gods love through the transformative power of music.
+              Born with a unique ministry, his musical endeavors are characterized
+              by the tangible presence of God, leaving a lasting impact on those who
+              experience his grace-filled ministrations.
+            </p>
+          </div>
+
+          <button className='read-more-btn'>Read More</button>
+
+          <SocialMedia />
+
+        </div>
+
+        <div className='vidoes d-flex'>
+
+          <Subtitle title="LATEST VIDEO" />
+
+          <Slider imgScr="/videothumbnail.png" />
+
+          <button className={`${questrial.className} previous-event-btn`}>See more from Youtube</button>
+        </div>
+
+        <div className='gallery d-flex'>
+
+          <Subtitle title="GALLERY" />
+
+          <p className={`${questrial.className} gallery-pgh`} >Photos from recent events</p>
+
+          <div className='gallery-container'>
+            <Image
+              src="/galleryimg.jpg"
+              alt='Deezer Logo'
+              width={371}
+              height={195}
+              className='galleryimg'
+            />
 
             <Image
-              src="/DavidNathanImg2.jpg"
+              src="/galleryimg.jpg"
               alt='Deezer Logo'
-              width={497}
-              height={461}
-              className='DavidNathanImg2'
+              width={371}
+              height={195}
+              className='galleryimg'
+            />
+
+            <Image
+              src="/galleryimg.jpg"
+              alt='Deezer Logo'
+              width={371}
+              height={195}
+              className='galleryimg'
+            />
+
+            <Image
+              src="/galleryimg.jpg"
+              alt='Deezer Logo'
+              width={371}
+              height={195}
+              className='galleryimg'
             />
 
           </div>
 
         </div>
 
+        <div className='contact d-flex'>
+
+          <Subtitle title="SUBSCRIBE AND GET THE LATEST NEWS" />
+
+          <Form />
+
+        </div>
+
+        <div className='merch-shop d-flex'>
+
+          <Subtitle title="MERCHANDISE SHOP" />
+
+          <Slider imgScr="/videothumbnail.png" />
+
+          <h3 className='merch-title'>
+            COG BRANDED HOODIE
+          </h3>
+
+          <h4 className={`${questrial.className} gallery-pgh read-more-btn merch-price`}>N20,200</h4>
+
+          <button className='merch-btn'> BUY ITEM</button>
+        </div>
 
       </main>
 
