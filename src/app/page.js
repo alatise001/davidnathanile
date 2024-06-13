@@ -35,78 +35,89 @@ export default function Home() {
                 GIFTED AND ANNOINTED
                 GOSPEL MINSTREL
               </h1>
-
-              <Image
-                src="/davidnathanlogo.png"
-                alt='David Nathan Logo'
-                width={256}
-                height={128}
-                className='headerIcon'
-              />
+              <Link href={`#`}>
+                <Image
+                  src="/davidnathanlogo.png"
+                  alt='David Nathan Logo'
+                  width={256}
+                  height={128}
+                  className='headerIcon'
+                />
+              </Link>
 
               <h3 className={`${questrial.className} stream-text`} >STREAM ONLINE</h3>
 
               <div className='icon-container'>
+                <a href="https://open.spotify.com/artist/1Vi7dzmkDVJyzxzmrADdhk?si=yLICBfX0Qfmd6LCxrPDjGw" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/Spotify.svg"
+                      alt='Spotify Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
 
-                <div className='icon-bg'>
-                  <Image
-                    src="/Spotify.svg"
-                    alt='Spotify Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
+                <a href="https://music.youtube.com/channel/UCZPVBg5nQQ_eN18f-I1pyIA?si=dtAF7Io2eslc7GYW" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/Youtube.svg"
+                      alt='Youtube Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
 
-                <div className='icon-bg'>
-                  <Image
-                    src="/Youtube.svg"
-                    alt='Youtube Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
+                <a href="https://on.soundcloud.com/BChSUQJKVcr5oczQ7" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/SoundCloud.svg"
+                      alt='SoundCloud Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
+                <a href="https://music.amazon.in/artists/B0BZQMXJ7S/david-nathan-ile?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_zFUODaSFU57RRFy28BODHGOsn" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/Prime.svg"
+                      alt='Amazon Music Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
 
-                <div className='icon-bg'>
-                  <Image
-                    src="/SoundCloud.svg"
-                    alt='SoundCloud Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
+                <a href="https://music.apple.com/us/artist/david-nathan-ile/1687804187" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/Apple.svg"
+                      alt='Apple Music Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
 
-                <div className='icon-bg'>
-                  <Image
-                    src="/Prime.svg"
-                    alt='Amazon Music Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
-
-                <div className='icon-bg'>
-                  <Image
-                    src="/Apple.svg"
-                    alt='Apple Music Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
-
-                <div className='icon-bg'>
-                  <Image
-                    src="/Deezer.svg"
-                    alt='Deezer Logo'
-                    width={22}
-                    height={22}
-                    className='headerIcon'
-                  />
-                </div>
+                <a href="https://deezer.page.link/J316BWQM7roBabmm9" target="_blank" rel="noopener noreferrer">
+                  <div className='icon-bg'>
+                    <Image
+                      src="/Deezer.svg"
+                      alt='Deezer Logo'
+                      width={22}
+                      height={22}
+                      className='headerIcon'
+                    />
+                  </div>
+                </a>
               </div>
 
 
@@ -194,7 +205,17 @@ export default function Home() {
 
           <Subtitle title="LATEST VIDEO" />
 
-          <Slider imgScr="/videothumbnail.png" />
+          <iframe
+            className='youtubeplayer'
+            // width="560"
+            // height="315"
+            src="https://www.youtube.com/embed/videoseries?si=lbF_F07JVvO-a0Rt&amp;list=PLw4I5sD161bB7D7Lu0OHzm508jDQxHAIL"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
 
           <button className={`${questrial.className} previous-event-btn`}>See more from Youtube</button>
         </div>
