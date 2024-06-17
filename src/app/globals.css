@@ -459,6 +459,14 @@ main {
   scroll-behavior: smooth;
   white-space: nowrap;
 
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
 }
 
 .galleryimg {

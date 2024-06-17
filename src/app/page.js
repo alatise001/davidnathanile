@@ -6,12 +6,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-import Subtitle from './component/Subtitle';
-import Footer from './component/footer';
-import Header from './component/header';
+import Subtitle from './component/subtitle';
 import SocialMedia from './component/socialMedia';
 import Form from './component/form';
 import Slider from './component/slider';
+import Event from './component/event';
+import Gallery from './component/gallery';
+import Carousel from './component/carousel';
 
 const questrial = Questrial({
   subsets: ['latin'],
@@ -133,7 +134,8 @@ export default function Home() {
 
           <Subtitle title="Listen to my songs" />
 
-          <Slider imgScr="/musicplayer.png" />
+          {/* <Slider imgScr="/musicplayer.png" /> */}
+          <Carousel imgScr="/musicplayer.png" />
 
           <h3 className={`${questrial.className} music-title`}>Holy Spirit</h3>
 
@@ -146,29 +148,7 @@ export default function Home() {
 
             <Subtitle title="Upcoming events" />
 
-            <div className='event d-flex'>
-
-              <div className='date-div'>
-                <div className='date'>22</div>
-                <div className='date-in-words'>
-                  <h4 className='day'>Saturday</h4>
-                  <h4 className='month'>June 2024</h4>
-                </div>
-              </div>
-
-              <div className='location-div d-flex'>
-                <h2 className='location-header'>
-                  CLOUD OF GLORY [ABEOKUTA]
-                </h2>
-                <p className={`${questrial.className} location-address-pgh`}><b>EB Music Studio</b>, No 3, Idowu Street Abeokuta</p>
-
-                <h4 className='event-time'>
-                  3PM
-                </h4>
-              </div>
-
-              <button className='reserve-spot-btn'>RESERVE SPOT</button>
-            </div>
+            <Event />
 
             <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button>
 
@@ -211,10 +191,10 @@ export default function Home() {
             // height="315"
             src="https://www.youtube.com/embed/videoseries?si=lbF_F07JVvO-a0Rt&amp;list=PLw4I5sD161bB7D7Lu0OHzm508jDQxHAIL"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen>
           </iframe>
 
           <button className={`${questrial.className} previous-event-btn`}>See more from Youtube</button>
@@ -224,42 +204,7 @@ export default function Home() {
 
           <Subtitle title="GALLERY" />
 
-          <p className={`${questrial.className} gallery-pgh`} >Photos from recent events</p>
-
-          <div className='gallery-container'>
-            <Image
-              src="/galleryimg.jpg"
-              alt='Deezer Logo'
-              width={371}
-              height={195}
-              className='galleryimg'
-            />
-
-            <Image
-              src="/galleryimg.jpg"
-              alt='Deezer Logo'
-              width={371}
-              height={195}
-              className='galleryimg'
-            />
-
-            <Image
-              src="/galleryimg.jpg"
-              alt='Deezer Logo'
-              width={371}
-              height={195}
-              className='galleryimg'
-            />
-
-            <Image
-              src="/galleryimg.jpg"
-              alt='Deezer Logo'
-              width={371}
-              height={195}
-              className='galleryimg'
-            />
-
-          </div>
+          <Gallery />
 
         </div>
 
