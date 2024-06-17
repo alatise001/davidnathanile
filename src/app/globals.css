@@ -518,6 +518,7 @@ main {
 .merch-shop {
   padding: 2.8rem 0rem 6rem 0rem;
   gap: 2rem;
+  /* flex-direction: row; */
 }
 
 .merch-title {
@@ -589,4 +590,12 @@ ul {
 li {
   align-self: flex-start;
   list-style: none;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }

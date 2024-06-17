@@ -1,25 +1,85 @@
 {
   "gallery":[
-    {
-      "img": "/gallery/1.jpg"
-    },
-     {
-      "img": "/gallery/2.jpg"
-    },
-     {
-      "img": "/gallery/3.jpg"
-    },
-     {
-      "img": "/gallery/4.jpg"
-    },
-     {
-      "img": "/gallery/5.jpg"
-    } ,
-    {
-      "img": "/gallery/6.jpg"
-    },
-     {
-      "img": "/gallery/7.jpg"
-    }
-]
+      {
+        "img": "/gallery/1.jpg"
+      },
+      {
+        "img": "/gallery/2.jpg"
+      },
+      {
+        "img": "/gallery/3.jpg"
+      },
+      {
+        "img": "/gallery/4.jpg"
+      },
+      {
+        "img": "/gallery/5.jpg"
+        } ,
+        {
+          "img": "/gallery/6.jpg"
+        },
+        {
+          "img": "/gallery/7.jpg"
+        }
+        
+    ],
+    
+    
+    "products":[
+        {
+          "id": 1,
+          "slug": "hoodie",
+          "name": "hoodie 1",
+          "category": "hoodie",
+          "price": 10599,
+          "image": "/hoodie.webp",
+          "description": "amazing hoodie",
+          "newProduct": true
+          
+        },
+        {
+          "id": 2,
+          "slug": "hoodie",
+          "name": "hoodie 2",
+          "category": "hoodie",
+          "price": 34899,
+          "image": "/hoodie.webp",
+          "description": "amazing hoodie",
+          "newProduct": true
+          
+        },
+        {
+          "id": 3,
+          "slug": "hoodie",
+          "name": "hoodie 3",
+          "category": "hoodie",
+          "price": 56599,
+          "image": "/hoodie.webp",
+          "description": "amazing hoodie",
+          "newProduct": true
+          
+        },
+        {
+          "id": 4,
+          "slug": "hoodie",
+          "name": "hoodie 4",
+          "category": "hoodie",
+          "price": 7899,
+          "image": "/hoodie.webp",
+          "description": "amazing hoodie",
+          "newProduct": true
+          
+        },
+        {
+          "id": 5,
+          "slug": "hoodie",
+          "name": "hoodie 5",
+          "category": "hoodie",
+          "price": 1999,
+          "image": "/hoodie.webp",
+          "description": "amazing hoodie",
+          "newProduct": true
+          
+        }
+  ]
 }

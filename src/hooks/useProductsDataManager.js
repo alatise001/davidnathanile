@@ -34,7 +34,7 @@ function useProductsDataManager() {
                 // console.log(result.data.products);
                 dispatch({
                     type: "setGetData",
-                    data: result.data.gallery
+                    data: result.data
                 })
             } catch (e) {
                 setRequestStatus(REQUEST_STATUS.FAILURE)

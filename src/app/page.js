@@ -12,7 +12,7 @@ import Form from './component/form';
 import Slider from './component/slider';
 import Event from './component/event';
 import Gallery from './component/gallery';
-import Carousel from './component/carousel';
+import Shop from './component/shop';
 
 const questrial = Questrial({
   subsets: ['latin'],
@@ -134,8 +134,7 @@ export default function Home() {
 
           <Subtitle title="Listen to my songs" />
 
-          {/* <Slider imgScr="/musicplayer.png" /> */}
-          <Carousel imgScr="/musicplayer.png" />
+          <Slider imgScr="/musicplayer.png" />
 
           <h3 className={`${questrial.className} music-title`}>Holy Spirit</h3>
 
@@ -216,11 +215,13 @@ export default function Home() {
 
         </div>
 
+        <Shop />
+
+        {/* 
         <div className='merch-shop d-flex'>
 
           <Subtitle title="MERCHANDISE SHOP" />
 
-          <Slider imgScr="/videothumbnail.png" />
 
           <h3 className='merch-title'>
             COG BRANDED HOODIE
@@ -229,7 +230,7 @@ export default function Home() {
           <h4 className={`${questrial.className} gallery-pgh read-more-btn merch-price`}>N20,200</h4>
 
           <button className='merch-btn'> BUY ITEM</button>
-        </div>
+        </div> */}
 
       </main>
 

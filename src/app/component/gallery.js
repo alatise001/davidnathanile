@@ -12,6 +12,23 @@ const questrial = Questrial({
 export default function Gallery() {
     const { isLoading, productLists, iserror } = useProductsDataManager()
 
+    if (isLoading) {
+        return (
+
+
+            <div className="loading-div">
+                {/* 
+                <Image
+                    src="/assets/loading.gif"
+                    width="200"
+                    height="200"
+                    alt="loading"
+
+                /> */}
+            </div>
+        )
+    }
+
     return (
         <>
             <p className={`${questrial.className} gallery-pgh`} >Photos from recent events</p>
@@ -19,7 +36,7 @@ export default function Gallery() {
             <div className='gallery-container'>
                 {
 
-                    productLists.map(map =>
+                    productLists.gallery.map(map =>
                     (
                         <>
 
