@@ -1,18 +1,23 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faXTwitter, faYoutube, faThreads } from '@fortawesome/free-brands-svg-icons';
 
 
 export default function SocialMedia() {
     return (
 
         <div className='social-div d-flex'>
+
             <div className='socialmediaicon-div d-flex '>
-                <FontAwesomeIcon className="socailmediaicon" icon={faXTwitter} />
+                <a href="https://x.com/DavidNathan_ile" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="socailmediaicon" icon={faXTwitter} />
+                </a>
             </div>
 
             <div className='socialmediaicon-div d-flex'>
-                <FontAwesomeIcon className="socailmediaicon" icon={faYoutube} />
+                <a href="https://youtube.com/@davidnathanile6992?si=O7psG-8kV2zvTN24" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="socailmediaicon" icon={faYoutube} />
+                </a>
             </div>
 
             <div className='socialmediaicon-div d-flex'>
@@ -20,7 +25,15 @@ export default function SocialMedia() {
             </div>
 
             <div className='socialmediaicon-div d-flex'>
-                <FontAwesomeIcon className="socailmediaicon" icon={faInstagram} />
+                <a href="https://www.instagram.com/davidnathan_ile?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="socailmediaicon" icon={faInstagram} />
+                </a>
+            </div>
+
+            <div className='socialmediaicon-div d-flex'>
+                <a href="https://www.threads.net/@davidnathan_ile?xmt=AQGzlablH97KZ1OX47wbT6mloyhFE_m52ynOPl_p83Fub4w" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="socailmediaicon" icon={faThreads} />
+                </a>
             </div>
         </div>
     )

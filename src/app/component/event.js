@@ -106,7 +106,11 @@ export default function Event() {
                 </h4>
             </div>
 
-            <button className='reserve-spot-btn' onClick={handleClick}  >RESERVE SPOT</button>
+            <button className='reserve-spot-btn' onClick={handleClick}  >
+                <span></span>
+                RESERVE SPOT
+                <span></span>
+            </button>
 
             {/* <script async defer src="https://apis.google.com/js/api.js" onLoad={gapiLoaded()}></script> */}
             {/* <script async defer src="https://accounts.google.com/gsi/client" onLoad={gisLoaded()}></script> */}

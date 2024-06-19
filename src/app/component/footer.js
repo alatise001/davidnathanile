@@ -33,21 +33,23 @@ export default function Footer() {
                 </div>
                 <SocialMedia />
 
-                <Image
-                    src="/davidnathanlogo.png"
-                    alt='David Nathan Logo'
-                    width={128}
-                    height={64}
-                    className='footerIcon'
-                />
+                <a href="#home">
+                    <Image
+                        src="/davidnathanlogo.png"
+                        alt='David Nathan Logo'
+                        width={128}
+                        height={64}
+                        className='footerIcon'
+                    />
+                </a>
 
                 <nav>
                     <ul className={`${questrial.className} d-flex`} >
-                        <li>Music</li>
-                        <li>Events</li>
-                        <li>Gallery</li>
-                        <li>Shop</li>
-                        <li>Contacts</li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#event">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#merch">Merch</a></li>
+                        <li><a href="#newsLetter">News Letter</a></li>
                     </ul>
                 </nav>
 

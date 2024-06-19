@@ -130,7 +130,7 @@ export default function Home() {
         <div className='backgroundImg1-div'>
         </div>
 
-        <div className='music-player'>
+        <div className='music-player' id='music'>
 
           <Subtitle title="Listen to my songs" />
 
@@ -140,7 +140,8 @@ export default function Home() {
 
           <button className={`${questrial.className} listen-now-btn`}>Listen now</button>
         </div>
-        <div className='upcoming-events'>
+
+        <div className='upcoming-events' id='event'>
 
           <h4></h4>
           <div className='blur-bg-calender d-flex' >
@@ -159,7 +160,7 @@ export default function Home() {
         <div className='backgroundImg2-div'>
         </div>
 
-        <div className='about d-flex'>
+        <div className='about d-flex' id='about'>
           <Subtitle title="ABOUT DAVID NATHAN ILE" />
 
           <div className='about-inner-div d-flex'>
@@ -180,7 +181,7 @@ export default function Home() {
 
         </div>
 
-        <div className='vidoes d-flex'>
+        <div className='vidoes d-flex' id='videos'>
 
           <Subtitle title="LATEST VIDEO" />
 
@@ -199,7 +200,7 @@ export default function Home() {
           <button className={`${questrial.className} previous-event-btn`}>See more from Youtube</button>
         </div>
 
-        <div className='gallery d-flex'>
+        <div className='gallery d-flex' id='gallery'>
 
           <Subtitle title="GALLERY" />
 
@@ -207,30 +208,20 @@ export default function Home() {
 
         </div>
 
-        <div className='contact d-flex'>
+        <div className='contact d-flex' id='newsLetter'>
 
           <Subtitle title="SUBSCRIBE AND GET THE LATEST NEWS" />
 
           <Form />
 
         </div>
-
-        <Shop />
-
-        {/* 
-        <div className='merch-shop d-flex'>
-
+        <div className='merch-shop d-flex' id='merch'>
           <Subtitle title="MERCHANDISE SHOP" />
 
+          <Shop />
 
-          <h3 className='merch-title'>
-            COG BRANDED HOODIE
-          </h3>
+        </div>
 
-          <h4 className={`${questrial.className} gallery-pgh read-more-btn merch-price`}>N20,200</h4>
-
-          <button className='merch-btn'> BUY ITEM</button>
-        </div> */}
 
       </main>
 

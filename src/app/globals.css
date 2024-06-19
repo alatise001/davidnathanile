@@ -353,6 +353,77 @@ main {
   line-height: 1.95rem;
   letter-spacing: 0.04375rem;
   text-transform: uppercase;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+.reserve-spot-btn:hover,
+.reserve-spot-btn:focus-visible {
+  background-color: #181716;
+}
+
+.reserve-spot-btn>span {
+  position: absolute;
+  z-index: -1;
+  width: 33.333%;
+  height: 100%;
+
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.reserve-spot-btn>:first-child {
+  top: 0;
+  left: 0;
+}
+
+.reserve-spot-btn>:last-child {
+  top: 0;
+  right: 0;
+}
+
+.reserve-spot-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+  /* background: hotpink; */
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+
+
+  opacity: 0;
+  transition: transform 500ms;
+
+}
+
+
+.reserve-spot-btn:active::before {
+  transform: scale(20);
+  opacity: 1;
+
+  transition: transform 500ms opacity 500ms;
+  ;
+}
+
+.reserve-spot-btn:has(:first-child:active)::before {
+  /* background-color: red; */
+  margin-left: 0;
+}
+
+.reserve-spot-btn:has(:last-child:active)::before {
+  margin-right: 0;
+}
+
+.reserve-spot-btn:has(:first-child:active)::before,
+.reserve-spot-btn:has(:last-child:active)::before {
+  transition: transform 1000ms opacity 250ms;
 }
 
 .previous-event-btn {
@@ -513,7 +584,78 @@ main {
   letter-spacing: .1rem;
 
   background: #B08B4A;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
+
+.submitinput-btn:hover,
+.submitinput-btn:focus-visible {
+  background-color: #B08B4A;
+}
+
+.submitinput-btn>span {
+  position: absolute;
+  z-index: -1;
+  width: 33.333%;
+  height: 100%;
+
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.submitinput-btn>:first-child {
+  top: 0;
+  left: 0;
+}
+
+.submitinput-btn>:last-child {
+  top: 0;
+  right: 0;
+}
+
+.submitinput-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+  /* background: hotpink; */
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+
+
+  opacity: 0;
+  transition: transform 500ms;
+
+}
+
+
+.submitinput-btn:active::before {
+  transform: scale(20);
+  opacity: 1;
+
+  transition: transform 500ms opacity 500ms;
+  ;
+}
+
+.submitinput-btn:has(:first-child:active)::before {
+  /* background-color: red; */
+  margin-left: 0;
+}
+
+.submitinput-btn:has(:last-child:active)::before {
+  margin-right: 0;
+}
+
+.submitinput-btn:has(:first-child:active)::before,
+.submitinput-btn:has(:last-child:active)::before {
+  transition: transform 1000ms opacity 250ms;
+}
+
 
 .merch-shop {
   padding: 2.8rem 0rem 6rem 0rem;
@@ -536,10 +678,83 @@ main {
   color: #B08B4A;
 }
 
+
+/* magic btn merch */
 .merch-btn {
   width: 6.44938rem;
   height: 2.19938rem;
   border: 2px solid #B08B4A;
+  transition: background-color 250ms;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.merch-btn:hover,
+.merch-btn:focus-visible {
+  background-color: #B08B4A;
+}
+
+.merch-btn>span {
+  position: absolute;
+  z-index: -1;
+  width: 33.333%;
+  height: 100%;
+
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.merch-btn>:first-child {
+  top: 0;
+  left: 0;
+}
+
+.merch-btn>:last-child {
+  top: 0;
+  right: 0;
+}
+
+.merch-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+  /* background: hotpink; */
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+
+
+  opacity: 0;
+  transition: transform 500ms;
+
+}
+
+
+.merch-btn:active::before {
+  transform: scale(20);
+  opacity: 1;
+
+  transition: transform 500ms opacity 500ms;
+  ;
+}
+
+.merch-btn:has(:first-child:active)::before {
+  /* background-color: red; */
+  margin-left: 0;
+}
+
+.merch-btn:has(:last-child:active)::before {
+  margin-right: 0;
+}
+
+.merch-btn:has(:first-child:active)::before,
+.merch-btn:has(:last-child:active)::before {
+  transition: transform 1000ms opacity 250ms;
 }
 
 footer {
@@ -598,4 +813,7 @@ li {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  /* transform: translate(50%); */
 }
