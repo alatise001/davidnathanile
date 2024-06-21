@@ -215,7 +215,9 @@ export default function Home() {
           <Form />
 
         </div>
+
         <div className='merch-shop d-flex' id='merch'>
+
           <Subtitle title="MERCHANDISE SHOP" />
 
           <Shop />
