@@ -13,16 +13,23 @@ import Slider from './component/slider';
 import Event from './component/event';
 import Gallery from './component/gallery';
 import Shop from './component/shop';
+import Calendar from './component/event';
 
 const questrial = Questrial({
   subsets: ['latin'],
   weight: "400",
 })
 
+import dynamic from 'next/dynamic';
+
+
 
 //home events contacts about spotify playlist
 
 export default function Home() {
+
+  // const Calendar = dynamic(() => import('../components/Calendar'), { ssr: false });
+
   return (
 
     <div className="background">
@@ -148,7 +155,8 @@ export default function Home() {
 
             <Subtitle title="Upcoming events" />
 
-            <Event />
+            {/* <Event /> */}
+            <Calendar />
 
             <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button>
 

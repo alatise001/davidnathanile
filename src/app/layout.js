@@ -14,7 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script async src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+        <script async defer src="https://apis.google.com/js/api.js"></script>
+        <script async defer src="https://accounts.google.com/gsi/client"></script>
       </head>
 
       <body className={oswald.className}>
