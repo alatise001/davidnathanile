@@ -155,8 +155,8 @@ export default function Home() {
 
             <Subtitle title="Upcoming events" />
 
-            {/* <Event /> */}
-            <Calendar />
+            <Event />
+            {/* <Calendar /> */}
 
             <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button>
 
@@ -205,7 +205,11 @@ export default function Home() {
             allowFullScreen>
           </iframe>
 
-          <button className={`${questrial.className} previous-event-btn`}>See more from Youtube</button>
+          <button className={`${questrial.className} previous-event-btn`}>
+            <a href="https://youtube.com/@davidnathanile6992?si=O7psG-8kV2zvTN24" target="_blank" rel="noopener noreferrer">
+              See more from Youtube
+            </a>
+          </button>
         </div>
 
         <div className='gallery d-flex' id='gallery'>

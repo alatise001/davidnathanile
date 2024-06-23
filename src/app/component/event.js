@@ -1,17 +1,26 @@
 'use client'
-
 import React, { useEffect, useState } from 'react';
 import { gapi } from 'gapi-script';
+import { Questrial } from 'next/font/google';
+
+const questrial = Questrial({
+    subsets: ['latin'],
+    weight: '400',
+});
 
 const CLIENT_ID = '957584540156-vg3et6oiclsqmt779c6ds7o3armpr99g.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyAAWztn1P8a8mOQOWSZebrdlAm__qLtFz8';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 const SCOPES = 'https://www.googleapis.com/auth/calendar';
 
-const Calendar = () => {
+
+export default function Fvent() {
+
     const [isAuthorized, setIsAuthorized] = useState(false);
-    const [events, setEvents] = useState([]);
+    // const [events, setEvents] = useState([]);
+    const [isSuccess, setIsSuccess] = useState(false)
     const [tokenClient, setTokenClient] = useState(null);
+
 
     useEffect(() => {
         const initClient = async () => {
@@ -38,37 +47,38 @@ const Calendar = () => {
             }
 
             setIsAuthorized(true);
-            await listUpcomingEvents();
+            // await listUpcomingEvents();
+            await handleAddEvent();
         };
 
-        const listUpcomingEvents = async () => {
-            try {
-                const request = {
-                    calendarId: 'primary',
-                    timeMin: new Date().toISOString(),
-                    showDeleted: false,
-                    singleEvents: true,
-                    maxResults: 10,
-                    orderBy: 'startTime',
-                };
+        // const listUpcomingEvents = async () => {
+        //     try {
+        //         const request = {
+        //             calendarId: 'primary',
+        //             timeMin: new Date().toISOString(),
+        //             showDeleted: false,
+        //             singleEvents: true,
+        //             maxResults: 10,
+        //             orderBy: 'startTime',
+        //         };
 
-                const response = await gapi.client.calendar.events.list(request);
-                const events = response.result.items;
-                setEvents(events || []);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+        //         const response = await gapi.client.calendar.events.list(request);
+        //         const events = response.result.items;
+        //         setEvents(events || []);
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // };
 
-        const revokeToken = () => {
-            const token = gapi.client.getToken();
-            if (token !== null) {
-                google.accounts.oauth2.revoke(token.access_token);
-                gapi.client.setToken(null);
-                setIsAuthorized(false);
-                setEvents([]);
-            }
-        };
+        // const revokeToken = () => {
+        //     const token = gapi.client.getToken();
+        //     if (token !== null) {
+        //         google.accounts.oauth2.revoke(token.access_token);
+        //         gapi.client.setToken(null);
+        //         setIsAuthorized(false);
+        //         setEvents([]);
+        //     }
+        // };
 
         initClient();
 
@@ -76,6 +86,20 @@ const Calendar = () => {
         //     gapi.auth2.getAuthInstance().disconnect();
         // };
     }, []);
+
+    useEffect(() => {
+        // Use setTimeout to update the message after 2000 milliseconds(2 seconds)
+        function timeoutId(params) {
+            setTimeout(() => {
+                setIsSuccess((prev) => !prev)
+            }, 7000);
+        }
+        // const timeoutId = 
+        isSuccess && timeoutId()
+
+        // Cleanup function to clear the timeout if the component unmounts
+        return () => clearTimeout(timeoutId);
+    }, [isSuccess])
 
     const handleAuthClick = () => {
         if (gapi.client.getToken() === null) {
@@ -92,11 +116,11 @@ const Calendar = () => {
                 'location': '800 Howard St., San Francisco, CA 94103',
                 'description': 'A chance to hear more about Google\'s developer products.',
                 'start': {
-                    'dateTime': '2025-05-28T09:00:00-07:00',
+                    'dateTime': '2024-06-24T09:00:00-07:00',
                     'timeZone': 'America/Los_Angeles'
                 },
                 'end': {
-                    'dateTime': '2025-05-28T17:00:00-07:00',
+                    'dateTime': '2024-06-24T17:00:00-07:00',
                     'timeZone': 'America/Los_Angeles'
                 },
                 'recurrence': [
@@ -121,7 +145,8 @@ const Calendar = () => {
             });
 
             if (response.status === 200) {
-                console.log('event succefully created' + event.htmlLink);
+                // console.log('event succefully created');
+                setIsSuccess((prev) => !prev)
             }
         } catch (error) {
             console.error('Error adding event: ', error);
@@ -129,30 +154,38 @@ const Calendar = () => {
     };
 
     return (
-        <div>
-            <h1>Google Calendar API Quickstart</h1>
-            <button onClick={handleAuthClick}>
-                {isAuthorized ? 'Refresh' : 'Authorize'}
+        <div className="event d-flex">
+            <div className="date-div">
+                <div className="date">22</div>
+                <div className="date-in-words">
+                    <h4 className="day">Saturday</h4>
+                    <h4 className="month">June 2024</h4>
+                </div>
+            </div>
+            <div className="location-div d-flex">
+                <h2 className="location-header">
+                    CLOUD OF GLORY [ABEOKUTA]
+                </h2>
+                <p className={`${questrial.className} location-address-pgh`}>
+                    <b>EB Music Studio</b>, No 3, Idowu Street Abeokuta
+                </p>
+                <h4 className="event-time">3PM</h4>
+            </div>
+            <button className="reserve-spot-btn" onClick={handleAuthClick}>
+                <span></span>
+                Add to calendar
+                <span></span>
             </button>
-            <br />
-            <br />
-            <br />
 
-            <button type="button" onClick={handleAddEvent}>Add Event</button>
-            <br />
-            <br />
-            <br />
-
-            {isAuthorized && (
-                <button onClick={() => revokeToken()}>Sign Out</button>
-            )}
-
-
-            <pre style={{ whiteSpace: 'pre-wrap' }}>
-                {events.length === 0 ? 'No events found.' : `Events:\n${events.map(event => `${event.summary} (${event.start.dateTime || event.start.date})`).join('\n')}`}
-            </pre>
+            {isSuccess &&
+                <div className='d-flex'>
+                    <p className={`${questrial.className} location-address-pgh`}>
+                        Event Successful Added To Calender
+                    </p>
+                </div>
+            }
         </div>
     );
-};
 
-export default Calendar;
+}
+
