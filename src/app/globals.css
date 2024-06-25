@@ -57,6 +57,10 @@ body {
   /* flex-direction: column; */
 }
 
+.nav-header-div {
+  display: none;
+}
+
 main {
   height: max-content;
   width: 100%;
@@ -770,13 +774,15 @@ footer {
 }
 
 .footer-blur {
+  padding: 2.8rem 8rem 4rem 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-inner-1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
-
-  padding: 2.8rem 1.5rem 4rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  gap: 3rem;
 }
 
 .footer-contact-info {
@@ -838,5 +844,215 @@ li {
   to {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+.largerImgDiv {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+  /* For desktop: */
+
+  .center {
+    padding: 0rem 4rem;
+  }
+
+  .hero-group {
+    display: flex;
+  }
+
+  .hero {
+    width: 50%;
+    height: 100vh;
+    order: 2;
+    align-items: flex-end;
+  }
+
+  .backgroundImg1-div {
+    width: 50%;
+    height: 100vh;
+
+  }
+
+  .bg-text {
+    align-items: flex-end;
+    /* padding: 0rem 4rem 0 0rem; */
+  }
+
+  .blur-bg {
+    height: inherit;
+    padding: 0rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: right;
+    font-size: 4.5rem;
+  }
+
+  .upcoming-events {
+    height: 80vh;
+  }
+
+  .blur-bg-calender {
+    justify-content: space-between;
+    height: inherit;
+  }
+
+  .event {
+    gap: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    padding: 3rem;
+    flex-direction: row;
+    max-width: 70%;
+  }
+
+  .backgroundImg2-div {
+    margin: 3rem auto;
+    background-color: inherit;
+    background-image: url("/davidnathanaboutimg.jpg");
+    background-position: 10% 30%;
+    background-repeat: no-repeat;
+    /* background-position: calc(50vh/2); */
+    background-size: cover;
+    /* padding: 25rem 0; */
+    width: 70%;
+    height: 40vh;
+  }
+
+  .about {
+    height: 40vh;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .about-pgh {
+    max-width: 50%;
+  }
+
+  .youtubeplayer {
+    width: 70%;
+    height: 560px;
+  }
+
+  .contact {
+    max-width: 70%;
+    margin: 0 auto;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    height: 14rem;
+    padding: 0 0;
+    gap: 2rem;
+  }
+
+  .contactform {
+    gap: .7rem;
+  }
+
+  .contact>.subtitle-div>.underline {
+    align-self: flex-start;
+  }
+
+  .shopLarger {
+    flex-direction: row;
+    justify-content: start;
+    max-width: 50%;
+    gap: 1rem;
+
+    overflow: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+
+  }
+
+  .largerImgDiv {
+    display: block;
+    align-self: center;
+    height: 70vh;
+    width: 70%;
+    background-position: center;
+    background-size: cover;
+    background-position: 10% 40%;
+  }
+
+  .galleryimgLarge {
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    height: 80vh;
+
+  }
+
+  .gallery-container {
+    width: 70%;
+    align-self: center;
+  }
+
+  .header {
+    flex-direction: column;
+    padding-top: 0;
+    gap: 1rem;
+  }
+
+  .nav-header-div {
+    width: max-content;
+  }
+
+  .hambuger {
+    display: none;
+  }
+
+
+  .footer {
+    height: max-content;
+    width: 100%;
+  }
+
+  .footer-blur {
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    height: inherit;
+    width: inherit;
+    flex-direction: row
+  }
+
+  .footer-inner-1 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  nav {
+    width: 35%;
+    display: flex;
+  }
+
+  .ul {
+    display: flex;
+    flex-direction: row;
+    max-width: max-content;
+    align-self: flex-end;
+  }
+
+  li,
+  a {
+    width: max-content;
   }
 }

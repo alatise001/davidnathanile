@@ -162,10 +162,11 @@ export default function Fvent() {
                     <h4 className="month">June 2024</h4>
                 </div>
             </div>
+
+            <h2 className="location-header">
+                CLOUD OF GLORY [ABEOKUTA]
+            </h2>
             <div className="location-div d-flex">
-                <h2 className="location-header">
-                    CLOUD OF GLORY [ABEOKUTA]
-                </h2>
                 <p className={`${questrial.className} location-address-pgh`}>
                     <b>EB Music Studio</b>, No 3, Idowu Street Abeokuta
                 </p>

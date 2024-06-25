@@ -12,15 +12,13 @@ import Form from './component/form';
 import Slider from './component/slider';
 import Event from './component/event';
 import Gallery from './component/gallery';
-import Shop from './component/shop';
-import Calendar from './component/event';
 
 const questrial = Questrial({
   subsets: ['latin'],
   weight: "400",
 })
-
-import dynamic from 'next/dynamic';
+import Merch from './component/merch';
+import GalleryLarger from './component/galleryLarger';
 
 
 
@@ -35,106 +33,108 @@ export default function Home() {
     <div className="background">
 
       <main className='main'>
-        <div className='hero'>
-          <div className='blur-bg'>
-            <div className='bg-text'>
+        <div className='hero-group'>
+          <div className='hero '>
+            <div className='blur-bg'>
+              <div className='bg-text'>
 
-              <h1 className='hero-text'>
-                GIFTED AND ANNOINTED
-                GOSPEL MINSTREL
-              </h1>
-              <Link href={`#`}>
-                <Image
-                  src="/davidnathanlogo.png"
-                  alt='David Nathan Logo'
-                  width={256}
-                  height={128}
-                  className='headerIcon'
-                />
-              </Link>
+                <h1 className='hero-text'>
+                  GIFTED AND ANNOINTED
+                  GOSPEL MINSTREL
+                </h1>
+                <Link href={`#`}>
+                  <Image
+                    src="/davidnathanlogo.png"
+                    alt='David Nathan Logo'
+                    width={256}
+                    height={128}
+                    className='headerIcon'
+                  />
+                </Link>
 
-              <h3 className={`${questrial.className} stream-text`} >STREAM ONLINE</h3>
+                <h3 className={`${questrial.className} stream-text`} >STREAM ONLINE</h3>
 
-              <div className='icon-container'>
-                <a href="https://open.spotify.com/artist/1Vi7dzmkDVJyzxzmrADdhk?si=yLICBfX0Qfmd6LCxrPDjGw" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/Spotify.svg"
-                      alt='Spotify Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
+                <div className='icon-container'>
+                  <a href="https://open.spotify.com/artist/1Vi7dzmkDVJyzxzmrADdhk?si=yLICBfX0Qfmd6LCxrPDjGw" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/Spotify.svg"
+                        alt='Spotify Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
 
-                <a href="https://music.youtube.com/channel/UCZPVBg5nQQ_eN18f-I1pyIA?si=dtAF7Io2eslc7GYW" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/Youtube.svg"
-                      alt='Youtube Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
+                  <a href="https://music.youtube.com/channel/UCZPVBg5nQQ_eN18f-I1pyIA?si=dtAF7Io2eslc7GYW" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/Youtube.svg"
+                        alt='Youtube Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
 
-                <a href="https://on.soundcloud.com/BChSUQJKVcr5oczQ7" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/SoundCloud.svg"
-                      alt='SoundCloud Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
-                <a href="https://music.amazon.in/artists/B0BZQMXJ7S/david-nathan-ile?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_zFUODaSFU57RRFy28BODHGOsn" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/Prime.svg"
-                      alt='Amazon Music Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
+                  <a href="https://on.soundcloud.com/BChSUQJKVcr5oczQ7" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/SoundCloud.svg"
+                        alt='SoundCloud Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
+                  <a href="https://music.amazon.in/artists/B0BZQMXJ7S/david-nathan-ile?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_zFUODaSFU57RRFy28BODHGOsn" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/Prime.svg"
+                        alt='Amazon Music Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
 
-                <a href="https://music.apple.com/us/artist/david-nathan-ile/1687804187" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/Apple.svg"
-                      alt='Apple Music Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
+                  <a href="https://music.apple.com/us/artist/david-nathan-ile/1687804187" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/Apple.svg"
+                        alt='Apple Music Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
 
-                <a href="https://deezer.page.link/J316BWQM7roBabmm9" target="_blank" rel="noopener noreferrer">
-                  <div className='icon-bg'>
-                    <Image
-                      src="/Deezer.svg"
-                      alt='Deezer Logo'
-                      width={22}
-                      height={22}
-                      className='headerIcon'
-                    />
-                  </div>
-                </a>
+                  <a href="https://deezer.page.link/J316BWQM7roBabmm9" target="_blank" rel="noopener noreferrer">
+                    <div className='icon-bg'>
+                      <Image
+                        src="/Deezer.svg"
+                        alt='Deezer Logo'
+                        width={22}
+                        height={22}
+                        className='headerIcon'
+                      />
+                    </div>
+                  </a>
+                </div>
+
+
               </div>
-
-
             </div>
+
           </div>
 
-        </div>
-
-        <div className='backgroundImg1-div'>
+          <div className='backgroundImg1-div'>
+          </div>
         </div>
 
         <div className='music-player' id='music'>
@@ -165,10 +165,11 @@ export default function Home() {
         </div>
 
 
-        <div className='backgroundImg2-div'>
+        <div className='backgroundImg2-div ' id='about'>
         </div>
 
-        <div className='about d-flex' id='about'>
+        <div className='about d-flex' >
+
           <Subtitle title="ABOUT DAVID NATHAN ILE" />
 
           <div className='about-inner-div d-flex'>
@@ -191,7 +192,7 @@ export default function Home() {
 
         <div className='vidoes d-flex' id='videos'>
 
-          <Subtitle title="LATEST VIDEO" />
+          <Subtitle title="LATEST VIDEOs" />
 
           <iframe
             className='youtubeplayer'
@@ -216,7 +217,8 @@ export default function Home() {
 
           <Subtitle title="GALLERY" />
 
-          <Gallery />
+          {/* <Gallery /> */}
+          <GalleryLarger />
 
         </div>
 
@@ -232,7 +234,7 @@ export default function Home() {
 
           <Subtitle title="MERCHANDISE SHOP" />
 
-          <Shop />
+          <Merch />
 
         </div>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Nav from './nav'
 
 
 export default function Header() {
@@ -15,6 +16,10 @@ export default function Header() {
                     className='headerIcon'
                 />
             </a>
+
+            <div className='nav-header-div'>
+                <Nav />
+            </div>
 
             <Image
                 src="/Hambuger.png"
