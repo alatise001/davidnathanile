@@ -217,16 +217,7 @@ export default function Home() {
 
           <Subtitle title="GALLERY" />
 
-          {/* <Gallery /> */}
           <GalleryLarger />
-
-        </div>
-
-        <div className='contact d-flex' id='newsLetter'>
-
-          <Subtitle title="SUBSCRIBE AND GET THE LATEST NEWS" />
-
-          <Form />
 
         </div>
 
@@ -235,6 +226,14 @@ export default function Home() {
           <Subtitle title="MERCHANDISE SHOP" />
 
           <Merch />
+
+        </div>
+
+        <div className='contact d-flex' id='newsLetter'>
+
+          <Subtitle title="SUBSCRIBE AND GET THE LATEST NEWS" />
+
+          <Form />
 
         </div>
 

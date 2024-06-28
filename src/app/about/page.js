@@ -1,6 +1,10 @@
 export default function Components() {
 
     return (
-        <div></div>
+        <div className="loading-div d-flex">
+
+            <div className="loading-img">
+            </div>
+        </div>
     );
 }

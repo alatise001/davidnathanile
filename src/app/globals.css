@@ -48,6 +48,26 @@ body {
   padding: 1rem 1.5rem;
 }
 
+.loading-div {
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.loading-img {
+  background-image: url("/IMG_9953.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% -260%;
+  /* outline: auto; */
+  width: inherit;
+  height: 50%;
+  z-index: 2;
+  color: #B08B4A;
+}
+
 .header {
   /* background-color: white; */
   width: 100%;
@@ -555,15 +575,16 @@ main {
 }
 
 .contact {
-  height: 23.3125rem;
+  height: max-content;
   background: #1A1A1A;
 
   padding: 4rem 1.5rem;
   gap: 2rem;
+  padding-bottom: 6rem;
 }
 
 .contactform {
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .emailinput {
@@ -667,7 +688,7 @@ main {
 
 
 .merch-shop {
-  padding: 2.8rem 0rem 6rem 0rem;
+  padding: 2.8rem 0rem 4rem 0rem;
   gap: 2rem;
   /* flex-direction: row; */
 }
@@ -857,6 +878,11 @@ li {
 
   /* For desktop: */
 
+  html,
+  body {
+    font-size: 1.1rem;
+  }
+
   .center {
     padding: 0rem 4rem;
   }
@@ -1009,6 +1035,7 @@ li {
   }
 
   .nav-header-div {
+    display: block;
     width: max-content;
   }
 
@@ -1054,5 +1081,9 @@ li {
   li,
   a {
     width: max-content;
+  }
+
+  .reserve-spot-btn {
+    width: 14.4375rem;
   }
 }
