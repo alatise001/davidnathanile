@@ -12,6 +12,7 @@ import Form from './component/form';
 import Slider from './component/slider';
 import Event from './component/event';
 import Gallery from './component/gallery';
+import { motion } from "framer-motion"
 
 const questrial = Questrial({
   subsets: ['latin'],

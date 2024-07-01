@@ -60,12 +60,31 @@ body {
   background-image: url("/IMG_9953.PNG");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0% -260%;
+  background-position: center -260%;
   /* outline: auto; */
   width: inherit;
   height: 50%;
-  z-index: 2;
-  color: #B08B4A;
+
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 .header {
