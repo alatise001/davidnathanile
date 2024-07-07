@@ -48,16 +48,13 @@ export default function Card({ img }) {
             <div id="myModal" class="modal">
 
 
-                <span class="close">&times;</span>
+                <span className="close">&times;</span>
 
-                <img class="modal-content" id="img01" />
+                <Image alt='' className="modal-content" id="img01" />
 
                 <div id="caption"></div>
             </div>
 
-            <script>
-
-            </script>
         </>
 
     )
