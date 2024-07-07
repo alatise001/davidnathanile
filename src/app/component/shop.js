@@ -35,9 +35,6 @@ export default function Shop({ imgScr }) {
         )
     }
 
-    // console.log(productLists.products[0]);
-    // console.log(productLists.products[0].image)
-
     const length = productLists.products.length
 
     function next(params) {
