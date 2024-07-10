@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { Questrial } from 'next/font/google';
+import { Questrial, Oswald } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -12,6 +12,10 @@ const questrial = Questrial({
     weight: "400",
 })
 
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
+})
 const inview = {
     start: {
         opacity: 0,
@@ -65,8 +69,8 @@ export default function ComingSoon({ imgScr }) {
                 variants={inview}
 
                 viewport={{ once: true }}
-
-                className='subtitle-header'>
+                className={`${oswald.className} subtitle-header`}
+            >
                 Coming soon!!
             </motion.h1>
         </motion.div>

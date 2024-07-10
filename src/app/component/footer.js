@@ -1,10 +1,15 @@
 import React from 'react'
-import { Questrial } from 'next/font/google'
+import { Questrial, Oswald } from 'next/font/google'
 import SocialMedia from './socialMedia';
 import Nav from './nav';
 import Image from 'next/image'
 
 import { motion } from 'framer-motion';
+
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
+})
 
 
 const inview = {
@@ -52,8 +57,8 @@ export default function Footer() {
                             variants={inview}
 
                             viewport={{ once: true }}
-
-                            className='subtitle-header'>CONTATCTS</motion.h2>
+                            className={`${oswald.className} subtitle-header`}
+                        >CONTATCTS</motion.h2>
                         <motion.div
                             initial="start"
                             whileInView="view"
@@ -118,7 +123,7 @@ export default function Footer() {
 
                         href="#home">
                         <Image
-                            src="/davidnathanlogo.png"
+                            src="/davidnathanlogo.webp"
                             alt='David Nathan Logo'
                             width={128}
                             height={64}

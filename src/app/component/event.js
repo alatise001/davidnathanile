@@ -1,13 +1,18 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { gapi } from 'gapi-script';
-import { Questrial } from 'next/font/google';
+import { Questrial, Oswald } from 'next/font/google';
 import { motion } from 'framer-motion';
 
 const questrial = Questrial({
     subsets: ['latin'],
     weight: '400',
 });
+
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
+})
 
 const CLIENT_ID = '957584540156-vg3et6oiclsqmt779c6ds7o3armpr99g.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyAAWztn1P8a8mOQOWSZebrdlAm__qLtFz8';
@@ -187,8 +192,9 @@ export default function Fvent() {
                 variants={inview}
 
                 viewport={{ once: true }}
+                className={`${oswald.className} date-div`}
 
-                className="date-div">
+            >
                 <div className="date">22</div>
                 <div className="date-in-words">
                     <h4 className="day">Saturday</h4>
@@ -204,7 +210,8 @@ export default function Fvent() {
                 variants={inview}
 
                 viewport={{ once: true }}
-                className="location-header">
+                className={`${oswald.className} location-header`}
+            >
                 CLOUD OF GLORY [ABEOKUTA]
             </motion.h2>
             <motion.div
@@ -234,8 +241,8 @@ export default function Fvent() {
                     variants={inview}
 
                     viewport={{ once: true }}
-
-                    className="event-time">3PM</motion.h4>
+                    className={`${oswald.className} event-time`}
+                >3PM</motion.h4>
             </motion.div>
             <motion.button
                 initial="start"
@@ -246,7 +253,8 @@ export default function Fvent() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.1 }}
 
-                className="reserve-spot-btn" onClick={handleAuthClick}>
+                className={`${oswald.className} reserve-spot-btn`}
+                onClick={handleAuthClick}>
                 <span></span>
                 Add to calendar
                 <span></span>

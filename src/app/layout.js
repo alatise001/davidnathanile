@@ -20,11 +20,17 @@ export default function RootLayout({ children }) {
   const [isloading, setIsLoading] = React.useState(true)
 
 
-  // if (isloading) {
-  //   return (
-  //     <Loading />
-  //   )
-  // }
+
+  React.useEffect(() => {
+    // Use setTimeout to update the message after 2000 milliseconds (2 seconds)
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false)
+    }, 7000);
+
+    // Cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timeoutId);
+  }, [])
+
 
   return (
     <html lang="en">
@@ -40,16 +46,16 @@ export default function RootLayout({ children }) {
         transition={{ duration: 1, delayChildren: 5 }}
         className={oswald.className}>
 
-        {/* {!isloading ? (<Loading />) : (<>
+        {isloading ? (<Loading />) : (<>
           <Header />
           {children}
           <Footer />
-        </>)} */}
+        </>)}
 
 
-        <Header />
+        {/* <Header />
         {children}
-        <Footer />
+        <Footer /> */}
 
 
       </motion.body>

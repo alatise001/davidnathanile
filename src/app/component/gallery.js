@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { Questrial } from 'next/font/google'
+import { Questrial, Oswald } from 'next/font/google'
 import useProductsDataManager from '@/hooks/useProductsDataManager'
 import Card from './card'
 import useMeasure from 'react-use-measure'
@@ -10,6 +10,11 @@ import { animate, useMotionValue, motion } from 'framer-motion'
 const questrial = Questrial({
     subsets: ['latin'],
     weight: "400",
+})
+
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
 })
 
 const inview = {

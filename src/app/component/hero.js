@@ -102,11 +102,11 @@ const Hero = () => {
                             viewport={{ once: true }}
                             href={`#`}>
                             <Image
-                                src="/davidnathanlogo.png"
+                                src="/davidnathanlogo.webp"
                                 alt='David Nathan Logo'
                                 width={256}
                                 height={128}
-                                className='headerIcon'
+                                className='heroheaderIcon'
                             />
                         </motion.a>
 

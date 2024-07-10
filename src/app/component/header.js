@@ -9,7 +9,7 @@ export default function Header() {
             <a href="#home">
 
                 <Image
-                    src="/davidnathanlogo.png"
+                    src="/davidnathanlogo.webp"
                     alt='David Nathan Logo'
                     width={140}
                     height={64}

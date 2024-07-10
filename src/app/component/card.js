@@ -1,7 +1,13 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import { Oswald } from 'next/font/google'
 import { AnimatePresence, motion } from 'framer-motion'
+
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
+})
 
 export default function Card({ img, imgScr, modal }) {
 
@@ -27,7 +33,8 @@ export default function Card({ img, imgScr, modal }) {
                                 initial={{ y: 10 }}
                                 animate={{ y: 0 }}
                                 exit={{ y: 10 }}
-                                className='card-h1'>
+                                className={`${oswald.className} card-h1`}
+                            >
                                 <span>View</span>
                             </motion.h1>
                         </motion.div>

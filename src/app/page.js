@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 // import styles from './page.module.css'
-import { Questrial } from 'next/font/google'
+import { Questrial, Oswald } from 'next/font/google'
 
 import Subtitle from './component/subtitle';
 import SocialMedia from './component/socialMedia';
@@ -19,6 +19,11 @@ import Gallery from './component/gallery';
 import ComingSoon from './component/comingSoon';
 import Hero from './component/hero';
 
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: "700",
+})
 
 const charaVariants = {
   hidden: { opacity: 0 },
@@ -166,8 +171,9 @@ export default function Home() {
                   variants={inview}
 
                   viewport={{ once: true }}
+                  className={`${oswald.className} read-more-btn`}
 
-                  className='read-more-btn'>Read More</motion.button>
+                >Read More</motion.button>
 
                 <SocialMedia />
               </div>

@@ -1,6 +1,12 @@
 'use client'
 import React from "react";
+import { Oswald } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
+
+const oswald = Oswald({
+    subsets: ['latin'],
+    weight: "700",
+})
 
 const inview = {
     start: {
@@ -166,7 +172,9 @@ export default function Form() {
 
                     viewport={{ once: true }}
 
-                    disabled={!isValid} onClick={handleSubmit} type="submit" value="SUBCRIBE" className='submitinput-btn' >
+                    disabled={!isValid} onClick={handleSubmit} type="submit" value="SUBCRIBE"
+                    className={`${oswald.className} submitinput-btn`}
+                >
                     <span></span>
                     SUBCRIBE
                     <span></span>

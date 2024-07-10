@@ -57,7 +57,7 @@ body {
 
 
 .loading-img {
-  background-image: url("/IMG_9953.PNG");
+  background-image: url("/Loading.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center -260%;
@@ -108,7 +108,7 @@ main {
 
 .hero {
   background-color: inherit;
-  background-image: url("/davidHeroImg.jpg");
+  background-image: url("/davidHeroImg.webp");
   /* padding: 15.8rem 0; */
   /* height: 90vh; */
   background-position: right;
@@ -311,7 +311,7 @@ main {
 .upcoming-events {
   /* width: 25.1875rem;
   height: 42.625rem; */
-  background-image: url("/calenderbg.png");
+  background-image: url("/calenderbg.webp");
   /* padding: 15.8rem 0; */
   /* height: 90vh; */
   background-position: left;
@@ -526,7 +526,7 @@ main {
 
 .backgroundImg2-div {
   background-color: inherit;
-  background-image: url("/davidnathanaboutimg.jpg");
+  background-image: url("/davidnathanaboutimg.webp");
   padding: 8.8rem 0;
   background-position: right;
   background-size: cover;
@@ -856,7 +856,7 @@ main {
 }
 
 footer {
-  background-image: url("/footerimg.jpg");
+  background-image: url("/footerimg.webp");
   background-position: center;
   background-size: cover;
 
@@ -1132,7 +1132,7 @@ li {
 }
 
 
-@media (min-width: 481px) and (max-width: 834px) {
+@media (min-width: 481px) and (max-width: 930px) {
   .hero-group {
     display: flex;
     flex-direction: column;
@@ -1160,6 +1160,7 @@ li {
   .blur-bg {
     height: inherit;
     padding: 0rem 4rem;
+    padding-right: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1225,8 +1226,17 @@ li {
 }
 
 
+/* @media (max-width: 1130px) {
+  .hero-text {
+    text-align: right;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    letter-spacing: .3rem;
+  }
+} */
 
-@media only screen and (min-width: 835px) {
+
+@media only screen and (min-width: 931px) {
 
   /* For desktop: */
 
@@ -1242,10 +1252,10 @@ li {
   .subtitle-header {
 
     font-size: 2.8rem;
-
-    line-height: 6rem;
+    line-height: 3rem;
 
   }
+
 
   .hero-group {
     display: flex;
@@ -1266,12 +1276,14 @@ li {
 
   .bg-text {
     align-items: flex-end;
+    gap: 1rem;
     /* padding: 0rem 4rem 0 0rem; */
   }
 
   .blur-bg {
     height: inherit;
     padding: 0rem 4rem;
+    padding-right: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1279,9 +1291,15 @@ li {
 
   .hero-text {
     text-align: right;
-    font-size: 5.5rem;
-    line-height: 5.3rem;
+    font-size: 4.5rem;
+    /* font-size: clamp(4rem, 3.2188rem + 2.5vw, 5rem); */
+    line-height: 4.5rem;
     letter-spacing: .3rem;
+  }
+
+  .heroheaderIcon {
+    width: 8.75rem;
+    height: 3.875rem;
   }
 
   .music-player {
@@ -1319,7 +1337,7 @@ li {
   .backgroundImg2-div {
     margin: 3rem auto;
     background-color: inherit;
-    background-image: url("/davidnathanaboutimg.jpg");
+    background-image: url("/davidnathanaboutimg.webp");
     background-position: 10% 30%;
     background-repeat: no-repeat;
     /* background-position: calc(50vh/2); */
@@ -1343,24 +1361,26 @@ li {
   }
 
   .contact {
-    max-width: 70%;
+    max-width: 90%;
     margin: 0 auto;
 
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
 
     height: 14rem;
-    padding: 0 0;
-    gap: 2rem;
+    padding: 2rem;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .contactform {
-    gap: .7rem;
+    flex-direction: row;
+    gap: .4rem;
   }
 
-  .contact>.subtitle-div>.underline {
-    align-self: flex-start;
+  .subtitle-div {
+    gap: 1rem;
   }
 
   .shopLarger {
@@ -1497,5 +1517,22 @@ li {
 
   .music-iframe {
     width: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-text {
+    font-size: 6rem;
+    line-height: 6rem;
+    letter-spacing: .3rem;
+  }
+
+  .blur-bg {
+    height: inherit;
+    padding: 0rem 4rem;
+    padding-right: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
