@@ -11,7 +11,7 @@ export default function Header() {
                 <Image
                     src="/davidnathanlogo.png"
                     alt='David Nathan Logo'
-                    width={128}
+                    width={140}
                     height={64}
                     className='headerIcon'
                 />

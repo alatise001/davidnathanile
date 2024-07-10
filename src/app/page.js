@@ -1,14 +1,11 @@
 'use client'
 import React from 'react';
 // import styles from './page.module.css'
-import { Coming_Soon, Questrial } from 'next/font/google'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Questrial } from 'next/font/google'
 
 import Subtitle from './component/subtitle';
 import SocialMedia from './component/socialMedia';
 import Form from './component/form';
-import Slider from './component/slider';
 import Event from './component/event';
 import { motion, useScroll, useTransform } from "framer-motion"
 import splitString from '@/hooks/splitString';
@@ -17,23 +14,35 @@ const questrial = Questrial({
   subsets: ['latin'],
   weight: "400",
 })
-import Merch from './component/merch';
-import GalleryLarger from './component/galleryLarger';
-import Loading from './component/loading';
+
 import Gallery from './component/gallery';
 import ComingSoon from './component/comingSoon';
+import Hero from './component/hero';
 
-
-
-//home events contacts about spotify playlist
 
 const charaVariants = {
   hidden: { opacity: 0 },
   reveal: { opacity: 1 },
 }
 
+const inview = {
+  start: {
+    opacity: 0,
+
+    y: 2 % 2 === 0 ? 50 : -50
+  },
+
+  view: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.5
+    }
+  }
+}
+
 export default function Home() {
-  const text = "GIFTED AND ANNOINTED GOSPEL MINSTREL"
+  const text = "David Nathan Ile is a gifted and anointed minstrel, passionately dedicated to spreading the gospel and Gods love through the transformative power of music. Born with a unique ministry, his musical endeavors are characterized by the tangible presence of God, leaving a lasting impact on those who experience his grace - filled ministrations."
 
   const targetRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -51,127 +60,8 @@ export default function Home() {
       {/* <Loading /> */}
 
       <main className='main'>
-        <div className='hero-group'>
-          <div className='hero '>
-            <div className='blur-bg'>
-              <div className='bg-text'>
 
-                <motion.h1
-                  initial="hidden"
-                  animate="reveal"
-                  variants={{ reveal: { transition: { staggerChildren: .1 } } }}
-
-                  className='hero-text'
-                >
-                  {heroText.map(char => (
-                    <motion.span key={char} transition={{ duration: .7 }} variants={charaVariants}>
-                      {char}
-                    </motion.span>
-                  ))}
-                </motion.h1>
-
-
-                <Link href={`#`}>
-                  <Image
-                    src="/davidnathanlogo.png"
-                    alt='David Nathan Logo'
-                    width={256}
-                    height={128}
-                    className='headerIcon'
-                  />
-                </Link>
-
-                <h3 className={`${questrial.className} stream-text`} >STREAM ONLINE</h3>
-
-                <div className='icon-container'>
-                  <a href="https://open.spotify.com/artist/1Vi7dzmkDVJyzxzmrADdhk?si=yLICBfX0Qfmd6LCxrPDjGw" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/Spotify.svg"
-                        alt='Spotify Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-
-                  <a href="https://music.youtube.com/channel/UCZPVBg5nQQ_eN18f-I1pyIA?si=dtAF7Io2eslc7GYW" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/Youtube.svg"
-                        alt='Youtube Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-
-                  <a href="https://on.soundcloud.com/BChSUQJKVcr5oczQ7" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/SoundCloud.svg"
-                        alt='SoundCloud Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-                  <a href="https://music.amazon.in/artists/B0BZQMXJ7S/david-nathan-ile?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_zFUODaSFU57RRFy28BODHGOsn" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/Prime.svg"
-                        alt='Amazon Music Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-
-                  <a href="https://music.apple.com/us/artist/david-nathan-ile/1687804187" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/Apple.svg"
-                        alt='Apple Music Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-
-                  <a href="https://deezer.page.link/J316BWQM7roBabmm9" target="_blank" rel="noopener noreferrer">
-                    <div className='icon-bg'>
-                      <Image
-                        src="/Deezer.svg"
-                        alt='Deezer Logo'
-                        width={22}
-                        height={22}
-                        className='headerIcon'
-                      />
-                    </div>
-                  </a>
-                </div>
-
-
-              </div>
-            </div>
-
-          </div>
-
-          {/* <div className='backgroundImg1-div'>
-          </div> */}
-          {/* <div className='vid'> */}
-          <video className='backgroundImg1-div' id="background-video" autoPlay loop muted>
-            <source src="/vid1.webm" type="video/webm" />
-          </video>
-          {/* </div> */}
-        </div>
-
-
+        <Hero />
 
         <section ref={targetRef} className='horizontalScroll-section'>
           <div className='horizontalScroll'>
@@ -183,16 +73,38 @@ export default function Home() {
 
                 <Subtitle title="Listen to my songs" />
 
-                <Slider imgScr="/musicplayer.png" />
+                <motion.iframe
+                  initial="start"
+                  whileInView="view"
 
-                <h3 className={`${questrial.className} music-title`}>Holy Spirit</h3>
+                  variants={inview}
 
-                <button className={`${questrial.className} listen-now-btn`}>Listen now</button>
+                  viewport={{ once: true }}
+
+                  className='music-iframe' style={{ borderRadius: "2rem", backgroundColor: "transparent" }}
+                  src="https://open.spotify.com/embed/artist/1Vi7dzmkDVJyzxzmrADdhk?utm_source=generator&theme=0"
+                  width="70%" height="552" frameBorder="0"
+                  allowfFullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy">
+                </motion.iframe>
+
+
+                <motion.a
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
+                  href="https://open.spotify.com/artist/1Vi7dzmkDVJyzxzmrADdhk?si=yLICBfX0Qfmd6LCxrPDjGw" target="_blank" rel="noopener noreferrer">
+                  <button className={`${questrial.className} listen-now-btn`}>Listen now</button>
+                </motion.a>
               </div>
 
               <div className='upcoming-events' id='event'>
 
-                <h4></h4>
                 <div className='blur-bg-calender d-flex' >
 
                   <Subtitle title="Upcoming events" />
@@ -200,7 +112,7 @@ export default function Home() {
                   <Event />
                   {/* <Calendar /> */}
 
-                  <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button>
+                  {/* <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button> */}
 
                 </div>
 
@@ -208,24 +120,54 @@ export default function Home() {
 
 
               <div className='about d-flex' >
-                <div className='backgroundImg2-div ' id='about'>
-                </div>
+                <motion.div
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
+                  className='backgroundImg2-div ' id='about'>
+                </motion.div>
 
                 <Subtitle title="ABOUT DAVID NATHAN ILE" />
 
-                <div className='about-inner-div d-flex'>
+                <motion.div
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
+                  className='about-inner-div d-flex'>
 
 
-                  <p className={`${questrial.className} about-pgh`}>
-                    David Nathan Ile is a gifted and anointed minstrel, passionately dedicated to
-                    spreading the gospel and Gods love through the transformative power of music.
-                    Born with a unique ministry, his musical endeavors are characterized
-                    by the tangible presence of God, leaving a lasting impact on those who
-                    experience his grace-filled ministrations.
-                  </p>
-                </div>
+                  <motion.p
+                    initial="hidden"
+                    animate="reveal"
+                    variants={{ reveal: { transition: { staggerChildren: .1 } } }}
 
-                <button className='read-more-btn'>Read More</button>
+                    className={`${questrial.className} about-pgh`}
+                  >
+                    {heroText.map(char => (
+                      <motion.span key={char} transition={{ duration: .7 }} variants={charaVariants}>
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </motion.div>
+
+                <motion.button
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
+                  className='read-more-btn'>Read More</motion.button>
 
                 <SocialMedia />
               </div>
@@ -234,7 +176,14 @@ export default function Home() {
 
                 <Subtitle title="LATEST VIDEOs" />
 
-                <iframe
+                <motion.iframe
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
                   className='youtubeplayer'
                   // width="560"
                   // height="315"
@@ -244,13 +193,21 @@ export default function Home() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen>
-                </iframe>
+                </motion.iframe>
 
-                <button className={`${questrial.className} previous-event-btn`}>
+                <motion.button
+                  initial="start"
+                  whileInView="view"
+
+                  variants={inview}
+
+                  viewport={{ once: true }}
+
+                  className={`${questrial.className} previous-event-btn`}>
                   <a href="https://youtube.com/@davidnathanile6992?si=O7psG-8kV2zvTN24" target="_blank" rel="noopener noreferrer">
                     See more from Youtube
                   </a>
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           </div>
@@ -261,6 +218,7 @@ export default function Home() {
           <Subtitle title="GALLERY" />
 
           <Gallery />
+
           {/* <GalleryLarger /> */}
 
         </div>

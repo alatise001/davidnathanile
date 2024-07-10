@@ -4,6 +4,24 @@ import SocialMedia from './socialMedia';
 import Nav from './nav';
 import Image from 'next/image'
 
+import { motion } from 'framer-motion';
+
+
+const inview = {
+    start: {
+        opacity: 0,
+
+        y: 2 % 2 === 0 ? 50 : -50
+    },
+
+    view: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5
+        }
+    }
+}
 
 const questrial = Questrial({
     subsets: ['latin'],
@@ -18,23 +36,87 @@ export default function Footer() {
                 <div className='footer-inner-1'>
 
 
-                    <div className='subtitle-div'>
-                        <h2 className='subtitle-header'>CONTATCTS</h2>
-                        <div className='underline underline-footer'></div>
-                    </div>
+                    <motion.div
+                        initial="start"
+                        whileInView="view"
+
+                        variants={inview}
+
+                        viewport={{ once: true }}
+
+                        className='subtitle-div'>
+                        <motion.h2
+                            initial="start"
+                            whileInView="view"
+
+                            variants={inview}
+
+                            viewport={{ once: true }}
+
+                            className='subtitle-header'>CONTATCTS</motion.h2>
+                        <motion.div
+                            initial="start"
+                            whileInView="view"
+
+                            variants={inview}
+
+                            viewport={{ once: true }}
+
+                            className='underline underline-footer'></motion.div>
+                    </motion.div>
 
 
-                    <div className={`${questrial.className} footer-contact-info d-flex`}>
-                        <p>+234 817 037 3208</p>
+                    <motion.div
+                        initial="start"
+                        whileInView="view"
 
-                        <p>davidnathanilemusic@gmail.com</p>
+                        variants={inview}
 
-                        <p>If you are planning to meet, it’s great to call ahead for an appointment. </p>
-                    </div>
+                        viewport={{ once: true }}
+
+                        className={`${questrial.className} footer-contact-info d-flex`}>
+                        <motion.p
+                            initial="start"
+                            whileInView="view"
+
+                            variants={inview}
+
+                            viewport={{ once: true }}
+
+                        >+234 817 037 3208</motion.p>
+
+                        <motion.p
+                            initial="start"
+                            whileInView="view"
+
+                            variants={inview}
+
+                            viewport={{ once: true }}
+
+                        >davidnathanilemusic@gmail.com</motion.p>
+
+                        <motion.p
+                            initial="start"
+                            whileInView="view"
+
+                            variants={inview}
+
+                            viewport={{ once: true }}
+
+                        >If you are planning to meet, it’s great to call ahead for an appointment. </motion.p>
+                    </motion.div>
 
                     <SocialMedia />
 
-                    <a href="#home">
+                    <motion.a
+                        initial="start"
+                        whileInView="view"
+
+                        variants={inview}
+
+                        viewport={{ once: true }}
+
+                        href="#home">
                         <Image
                             src="/davidnathanlogo.png"
                             alt='David Nathan Logo'
@@ -42,7 +124,7 @@ export default function Footer() {
                             height={64}
                             className='footerIcon'
                         />
-                    </a>
+                    </motion.a>
                 </div>
 
 

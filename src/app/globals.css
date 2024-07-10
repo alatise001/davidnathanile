@@ -419,9 +419,11 @@ main {
   text-align: center;
   justify-content: center;
   align-items: center;
+  border-radius: .5rem;
 
 
-  background: #B08B4A;
+  background: #1A1A1A;
+  color: #8A8A8A;
 
   text-align: center;
   font-size: 0.875rem;
@@ -989,7 +991,7 @@ li {
 .card-inner-div {
   position: absolute;
   inset: 0;
-  z-index: 10;
+  z-index: 50;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1051,28 +1053,19 @@ li {
 }
 
 
-/* The Modal (background) */
 .modal {
   display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
+  position: absolute;
+  z-index: 20;
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/ opacity */
+
 }
 
 /* Modal Content (Image) */
@@ -1121,6 +1114,7 @@ li {
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
+  z-index: 100;
 }
 
 .close:hover,
@@ -1138,9 +1132,101 @@ li {
 }
 
 
+@media (min-width: 481px) and (max-width: 834px) {
+  .hero-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero {
+    width: 100%;
+    height: 90vh;
+    order: 1;
+    align-items: flex-end;
+  }
+
+  .backgroundImg1-div {
+    width: 100%;
+    height: 90vh;
+    order: 2;
+
+  }
+
+  .bg-text {
+    align-items: center;
+    /* padding: 0rem 4rem 0 0rem; */
+  }
+
+  .blur-bg {
+    height: inherit;
+    padding: 0rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blur-bg-calender {
+    /* justify-content: space-around; */
+    /* gap: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* height: inherit; */
+    /* width: inherit; */
+    /* height: inherit; */
+    /* padding: 2.8rem 1.5rem 2rem 1.5rem; */
+    /* -webkit-backdrop-filter: blur(5px); */
+    /* backdrop-filter: blur(5px); */
+
+  }
+
+  .about {
+    height: 100vh;
+    justify-content: space-around;
+    /* gap: .4rem; */
+    /* padding-bottom: 1.5rem; */
+    width: 100vw;
+    padding-bottom: 1rem;
+  }
+
+  .backgroundImg2-div {
+
+    align-self: center;
+    height: 45%;
+    width: 80%;
+  }
+
+  .about-pgh {
+    max-width: 70%;
+  }
+
+  .vidoes {
+    gap: 2rem;
+    padding: 4rem 1.5rem;
+    width: 100vw;
+    justify-content: space-around;
+  }
+
+  .youtubeplayer {
+    max-width: 80%;
+  }
+
+  .footer {
+    height: max-content;
+    width: 100%;
+  }
+
+  .footer-blur {
+
+    height: inherit;
+    width: inherit;
+    padding: 2.8rem 8rem 4rem 3rem;
+  }
 
 
-@media only screen and (min-width: 768px) {
+}
+
+
+
+@media only screen and (min-width: 835px) {
 
   /* For desktop: */
 
@@ -1151,6 +1237,14 @@ li {
 
   .center {
     padding: 0rem 4rem;
+  }
+
+  .subtitle-header {
+
+    font-size: 2.8rem;
+
+    line-height: 6rem;
+
   }
 
   .hero-group {
@@ -1179,13 +1273,15 @@ li {
     height: inherit;
     padding: 0rem 4rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
 
   .hero-text {
     text-align: right;
-    font-size: 4.5rem;
+    font-size: 5.5rem;
+    line-height: 5.3rem;
+    letter-spacing: .3rem;
   }
 
   .music-player {
@@ -1200,7 +1296,7 @@ li {
   }
 
   .blur-bg-calender {
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: inherit;
   }
 
@@ -1209,14 +1305,15 @@ li {
     border: 1px solid rgba(255, 255, 255, 0.50);
     padding: 3rem;
     flex-direction: row;
-    max-width: 70%;
+    max-width: 90%;
   }
 
   .about {
     height: 100vh;
     width: 100vw;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: space-around;
+    gap: .5rem;
+    padding: 1rem 0rem;
   }
 
   .backgroundImg2-div {
@@ -1396,5 +1493,9 @@ li {
     height: 360px;
     min-height: 360px;
 
+  }
+
+  .music-iframe {
+    width: 50%;
   }
 }

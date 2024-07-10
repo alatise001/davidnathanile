@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { gapi } from 'gapi-script';
 import { Questrial } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 const questrial = Questrial({
     subsets: ['latin'],
@@ -12,6 +13,22 @@ const CLIENT_ID = '957584540156-vg3et6oiclsqmt779c6ds7o3armpr99g.apps.googleuser
 const API_KEY = 'AIzaSyAAWztn1P8a8mOQOWSZebrdlAm__qLtFz8';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 const SCOPES = 'https://www.googleapis.com/auth/calendar';
+
+const inview = {
+    start: {
+        opacity: 0,
+
+        y: 2 % 2 === 0 ? 50 : -50
+    },
+
+    view: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5
+        }
+    }
+}
 
 
 export default function Fvent() {
@@ -154,38 +171,103 @@ export default function Fvent() {
     };
 
     return (
-        <div className="event d-flex">
-            <div className="date-div">
+        <motion.div
+            initial="start"
+            whileInView="view"
+
+            variants={inview}
+
+            viewport={{ once: true }}
+
+            className="event d-flex">
+            <motion.div
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+
+                className="date-div">
                 <div className="date">22</div>
                 <div className="date-in-words">
                     <h4 className="day">Saturday</h4>
                     <h4 className="month">June 2024</h4>
                 </div>
-            </div>
+            </motion.div>
 
-            <h2 className="location-header">
+            <motion.h2
+
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+                className="location-header">
                 CLOUD OF GLORY [ABEOKUTA]
-            </h2>
-            <div className="location-div d-flex">
-                <p className={`${questrial.className} location-address-pgh`}>
+            </motion.h2>
+            <motion.div
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+
+                className="location-div d-flex">
+                <motion.p
+                    initial="start"
+                    whileInView="view"
+
+                    variants={inview}
+
+                    viewport={{ once: true }}
+
+                    className={`${questrial.className} location-address-pgh`}>
                     <b>EB Music Studio</b>, No 3, Idowu Street Abeokuta
-                </p>
-                <h4 className="event-time">3PM</h4>
-            </div>
-            <button className="reserve-spot-btn" onClick={handleAuthClick}>
+                </motion.p>
+                <motion.h4
+                    initial="start"
+                    whileInView="view"
+
+                    variants={inview}
+
+                    viewport={{ once: true }}
+
+                    className="event-time">3PM</motion.h4>
+            </motion.div>
+            <motion.button
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+
+                className="reserve-spot-btn" onClick={handleAuthClick}>
                 <span></span>
                 Add to calendar
                 <span></span>
-            </button>
+            </motion.button>
 
             {isSuccess &&
-                <div className='d-flex'>
+                <motion.div
+                    initial="start"
+                    whileInView="view"
+
+                    variants={inview}
+
+                    viewport={{ once: true }}
+
+                    className='d-flex'>
                     <p className={`${questrial.className} location-address-pgh`}>
                         Event Successful Added To Calender
                     </p>
-                </div>
+                </motion.div>
             }
-        </div>
+        </motion.div>
     );
 
 }

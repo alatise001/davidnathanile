@@ -1,10 +1,9 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
-import { faL } from '@fortawesome/free-solid-svg-icons'
-import { script } from 'googleapis/build/src/apis/script'
 
-export default function Card({ img }) {
+export default function Card({ img, imgScr, modal }) {
 
     const [showOverlay, setShowOverly] = React.useState(false)
     return (
@@ -12,6 +11,7 @@ export default function Card({ img }) {
             <motion.div
                 onHoverStart={() => setShowOverly(true)}
                 onHoverEnd={() => setShowOverly(false)}
+                // onClick={(e) => { imgScr(img); modal }}
                 className='card-div'>
                 <AnimatePresence>
                     {showOverlay && (
@@ -19,14 +19,16 @@ export default function Card({ img }) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
+                            onClick={(e) => { imgScr(img); modal() }}
                             className='card-inner-div'>
+
                             <div className='card-inner-div-1' />
                             <motion.h1
                                 initial={{ y: 10 }}
                                 animate={{ y: 0 }}
                                 exit={{ y: 10 }}
                                 className='card-h1'>
-                                <span>Open</span>
+                                <span>View</span>
                             </motion.h1>
                         </motion.div>
                     )
@@ -41,21 +43,11 @@ export default function Card({ img }) {
                 // width={371}
                 // height={195}
                 // className='galleryimg'
+                // onClick={}
                 />
             </motion.div>
-
-
-            <div id="myModal" class="modal">
-
-
-                <span className="close">&times;</span>
-
-                <Image alt='' className="modal-content" id="img01" />
-
-                <div id="caption"></div>
-            </div>
-
         </>
+
 
     )
 }

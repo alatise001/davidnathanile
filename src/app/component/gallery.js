@@ -12,6 +12,22 @@ const questrial = Questrial({
     weight: "400",
 })
 
+const inview = {
+    start: {
+        opacity: 0,
+
+        y: 2 % 2 === 0 ? 50 : -50
+    },
+
+    view: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5
+        }
+    }
+}
+
 export default function Gallery() {
     const { isLoading, productLists, iserror } = useProductsDataManager()
 
@@ -57,6 +73,28 @@ export default function Gallery() {
 
 
 
+    const [showModal, setShowModal] = React.useState(false)
+
+
+    const [imgScr, setImgScr] = React.useState('')
+
+    function setScr(scr) {
+        console.log(scr);
+        setImgScr(prev => prev = scr)
+
+    }
+
+    function showModalFunc() {
+        console.log('work');
+        setShowModal((prev) => !prev)
+
+    }
+
+    const styles = {
+        display: showModal ? "block" : "none",
+    };
+
+
     if (isLoading) {
         return (
 
@@ -76,7 +114,15 @@ export default function Gallery() {
 
     return (
         <>
-            <p className={`${questrial.className} gallery-pgh`} >Photos from recent events</p>
+            <motion.p
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+
+                className={`${questrial.className} gallery-pgh`} >Photos from recent events</motion.p>
 
             <motion.div className='gallery-container-new' ref={ref} style={{ x: xTranslation }}
                 onHoverStart={() => { setMustFinish(true); setDuration(SLOW_DURATION); }}
@@ -87,7 +133,7 @@ export default function Gallery() {
                     [...productLists.gallery, ...productLists.gallery].map(map =>
                     (
                         <>
-                            <Card img={map.img} />
+                            <Card img={map.img} imgScr={setScr} modal={showModalFunc} />
                         </>
                     )
 
@@ -96,6 +142,29 @@ export default function Gallery() {
                 }
 
             </motion.div >
+
+
+            <div id="myModal" className="modal" style={styles}>
+
+
+                <span className="close" onClick={() => setShowModal(false)} >&times;</span>
+
+
+                {/* <img class="modal-content" id="img01"> */}
+                < Image
+                    src={imgScr}
+                    alt={imgScr}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    // width={371}
+                    // height={195}
+                    className='modal-content'
+                    id='img01'
+                // onClick={() => { setShowModal(true) }}
+                />
+
+                <div id="caption" ></div>
+            </div>
         </>
 
     )

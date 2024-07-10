@@ -2,6 +2,7 @@
 import React from 'react';
 import { Questrial } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { faAngleRight, faAngleLeft, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import useProductsDataManager from '@/hooks/useProductsDataManager';
@@ -11,6 +12,22 @@ const questrial = Questrial({
     weight: "400",
 })
 
+const inview = {
+    start: {
+        opacity: 0,
+
+        y: 2 % 2 === 0 ? 50 : -50
+    },
+
+    view: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5
+        }
+    }
+}
+
 
 
 export default function ComingSoon({ imgScr }) {
@@ -19,16 +36,40 @@ export default function ComingSoon({ imgScr }) {
 
 
     return (
-        <div className='coming-soon'>
+        <motion.div
+            initial="start"
+            whileInView="view"
 
-            <div className=' coming-soon-bg fade d-flex gap'>
+            variants={inview}
+
+            viewport={{ once: true }}
+
+            className='coming-soon'>
+
+            <motion.div
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+
+                className=' coming-soon-bg d-flex gap'>
                 <FontAwesomeIcon className='comingIcon' icon={faQuestion} beatFade />
-            </div>
+            </motion.div>
 
-            <h1 className='subtitle-header'>
+            <motion.h1
+                initial="start"
+                whileInView="view"
+
+                variants={inview}
+
+                viewport={{ once: true }}
+
+                className='subtitle-header'>
                 Coming soon!!
-            </h1>
-        </div>
+            </motion.h1>
+        </motion.div>
 
     )
 }
