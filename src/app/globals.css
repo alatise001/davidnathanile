@@ -1095,6 +1095,14 @@ li {
   animation-duration: 0.6s;
 }
 
+.about-page {
+  /* height: 100vh; */
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  width: 100vw;
+}
+
 @keyframes zoom {
   from {
     transform: scale(0)
@@ -1197,6 +1205,10 @@ li {
 
   .about-pgh {
     max-width: 70%;
+  }
+
+  .about-page-pgh {
+    max-width: 90%;
   }
 
   .vidoes {
