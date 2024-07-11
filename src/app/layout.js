@@ -8,6 +8,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import { motion } from 'framer-motion'
 import Loading from './components/loading'
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
+          <Analytics />
         </>)}
 
 
