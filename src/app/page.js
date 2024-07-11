@@ -1,24 +1,23 @@
 'use client'
 import React from 'react';
-// import styles from './page.module.css'
 import { Questrial, Oswald } from 'next/font/google'
 
-import Subtitle from './component/subtitle';
-import SocialMedia from './component/socialMedia';
-import Form from './component/form';
-import Event from './component/event';
+import Subtitle from './components/subtitle';
+import SocialMedia from './components/socialMedia';
+import Form from './components/form';
+import Event from './components/event';
 import { motion, useScroll, useTransform } from "framer-motion"
 import splitString from '@/hooks/splitString';
+
+import Gallery from './components/gallery';
+import ComingSoon from './components/comingSoon';
+import Hero from './components/hero';
+import Link from 'next/link';
 
 const questrial = Questrial({
   subsets: ['latin'],
   weight: "400",
 })
-
-import Gallery from './component/gallery';
-import ComingSoon from './component/comingSoon';
-import Hero from './component/hero';
-
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -115,7 +114,6 @@ export default function Home() {
                   <Subtitle title="Upcoming events" />
 
                   <Event />
-                  {/* <Calendar /> */}
 
                   {/* <button className={`${questrial.className} previous-event-btn`}>See Previous Events</button> */}
 
@@ -164,16 +162,18 @@ export default function Home() {
                   </motion.p>
                 </motion.div>
 
-                <motion.button
-                  initial="start"
-                  whileInView="view"
+                <Link href={"/about"}>
+                  <motion.button
+                    initial="start"
+                    whileInView="view"
 
-                  variants={inview}
+                    variants={inview}
 
-                  viewport={{ once: true }}
-                  className={`${oswald.className} read-more-btn`}
+                    viewport={{ once: true }}
+                    className={`${oswald.className} read-more-btn`}
 
-                >Read More</motion.button>
+                  >Read More</motion.button>
+                </Link>
 
                 <SocialMedia />
               </div>

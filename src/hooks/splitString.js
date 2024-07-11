@@ -1,3 +1,5 @@
+'use client'
+
 function splitString(inputString) {
     const characters = []
     const regex = /[\s\S]/gu;

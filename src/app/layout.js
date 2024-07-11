@@ -1,12 +1,14 @@
 'use client'
-import { Oswald } from 'next/font/google'
+
 import './globals.css'
-import Header from './component/header'
-import Footer from './component/footer'
-import { motion } from 'framer-motion'
-import Loading from './component/loading'
 
 import React from 'react'
+import { Oswald } from 'next/font/google'
+import Header from './components/header'
+import Footer from './components/footer'
+import { motion } from 'framer-motion'
+import Loading from './components/loading'
+
 
 
 const oswald = Oswald({ subsets: ['latin'], display: "swap" })
@@ -36,6 +38,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <head>
+
+        {/* <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <title>Hear Me</title> */}
+
         <script async defer src="https://apis.google.com/js/api.js"></script>
         <script async defer src="https://accounts.google.com/gsi/client"></script>
       </head>

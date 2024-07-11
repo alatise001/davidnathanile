@@ -2,8 +2,8 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-import Subtitle from "../component/subtitle";
-import SocialMedia from "../component/socialMedia";
+import Subtitle from "../components/subtitle";
+import SocialMedia from "../components/socialMedia";
 
 import { Questrial, Oswald } from 'next/font/google'
 

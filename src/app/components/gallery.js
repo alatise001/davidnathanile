@@ -90,7 +90,6 @@ export default function Gallery() {
     }
 
     function showModalFunc() {
-        console.log('work');
         setShowModal((prev) => !prev)
 
     }

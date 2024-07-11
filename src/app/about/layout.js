@@ -1,4 +1,4 @@
-export default function ProductsLayout({ children }) {
+export default function AboutLayout({ children }) {
     return (
         <section>
 

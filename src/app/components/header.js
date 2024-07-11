@@ -1,12 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import Nav from './nav'
+import Link from 'next/link'
 
 
 export default function Header() {
     return (
         <header className='header alignMargin' id='home'>
-            <a href="#home">
+            <Link href={'/'}>
+                {/* <a href="#home"> */}
 
                 <Image
                     src="/davidnathanlogo.webp"
@@ -15,7 +17,8 @@ export default function Header() {
                     height={64}
                     className='headerIcon'
                 />
-            </a>
+                {/* </a> */}
+            </Link>
 
             <div className='nav-header-div'>
                 <Nav />
