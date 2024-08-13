@@ -150,7 +150,7 @@ const Hero = () => {
                                 href="https://music.youtube.com/channel/UCZPVBg5nQQ_eN18f-I1pyIA?si=dtAF7Io2eslc7GYW" target="_blank" rel="noopener noreferrer">
                                 <div className='icon-bg'>
                                     <Image
-                                        src="/Youtube.svg"
+                                        src="/YouTube.svg"
                                         alt='Youtube Logo'
                                         width={22}
                                         height={22}
