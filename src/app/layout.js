@@ -40,12 +40,12 @@ export default function RootLayout({ children }) {
 
       <head>
 
-        {/* <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/Loading.webp" />
+        <link rel="icon" type="image/webp" sizes="180x180" href="/Loading.webp" />
+        {/* <link rel="icon" type="image/webp" sizes="16x16" href="/Loading.webp" /> */}
+        <link rel="manifest" href="site.webmanifest" />
 
-        <title>Hear Me</title> */}
+        <title>David Nathan</title>
 
         <script async defer src="https://apis.google.com/js/api.js"></script>
         <script async defer src="https://accounts.google.com/gsi/client"></script>
